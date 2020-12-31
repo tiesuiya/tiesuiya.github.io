@@ -5,20 +5,20 @@
   
 
   
-  <title>2019第2次回顾 | 李二狗</title>
+  <title>2021100jdk代理和cglib代理 | 李二狗</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天4月7号，清明三天假刹割。其中两天在家里蹲。 还以为都是今天就要写回顾了呢，结果一看是9号，不过既然看到了，就搞一搞。 02版的： 2323计划凉了。 GTD突破计划凉了。 喜欢自己计划基本凉了。 好在，知道自己想干什么，近期积极性还算比较高，开始早起看书了。 希望这个习惯能保持，争取4月把第一本书看完。 那么这次计划是这样的： 早睡什么的去死吧，起床困难了自然就知道早睡了？哈哈哈。 然后来说">
-<meta name="keywords" content="回顾">
+  <meta name="description" content="003昨日计划：试着用代理解决日志问题  没一会就2021年了!希望来年有长足的长进啊！ 今天利用上班时间，看了下jdk代理和cglib代理的区别。 简单来说，就是目标对象只有实现了接口才能用jdk代理，否则只能用cglib代理。 …  明日计划：继续打一会核心卷一的代码">
+<meta name="keywords" content="是男人就干100天">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019第2次回顾">
-<meta property="og:url" content="http://tiesuiya.github.io/2019/04/07/2019第2次回顾/index.html">
+<meta property="og:title" content="2021100jdk代理和cglib代理">
+<meta property="og:url" content="http://tiesuiya.github.io/2020/12/31/2021100jdk代理和cglib代理/index.html">
 <meta property="og:site_name" content="李二狗">
-<meta property="og:description" content="今天4月7号，清明三天假刹割。其中两天在家里蹲。 还以为都是今天就要写回顾了呢，结果一看是9号，不过既然看到了，就搞一搞。 02版的： 2323计划凉了。 GTD突破计划凉了。 喜欢自己计划基本凉了。 好在，知道自己想干什么，近期积极性还算比较高，开始早起看书了。 希望这个习惯能保持，争取4月把第一本书看完。 那么这次计划是这样的： 早睡什么的去死吧，起床困难了自然就知道早睡了？哈哈哈。 然后来说">
+<meta property="og:description" content="003昨日计划：试着用代理解决日志问题  没一会就2021年了!希望来年有长足的长进啊！ 今天利用上班时间，看了下jdk代理和cglib代理的区别。 简单来说，就是目标对象只有实现了接口才能用jdk代理，否则只能用cglib代理。 …  明日计划：继续打一会核心卷一的代码">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-03-03T13:07:35.000Z">
+<meta property="og:updated_time" content="2020-12-31T15:34:48.422Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2019第2次回顾">
-<meta name="twitter:description" content="今天4月7号，清明三天假刹割。其中两天在家里蹲。 还以为都是今天就要写回顾了呢，结果一看是9号，不过既然看到了，就搞一搞。 02版的： 2323计划凉了。 GTD突破计划凉了。 喜欢自己计划基本凉了。 好在，知道自己想干什么，近期积极性还算比较高，开始早起看书了。 希望这个习惯能保持，争取4月把第一本书看完。 那么这次计划是这样的： 早睡什么的去死吧，起床困难了自然就知道早睡了？哈哈哈。 然后来说">
+<meta name="twitter:title" content="2021100jdk代理和cglib代理">
+<meta name="twitter:description" content="003昨日计划：试着用代理解决日志问题  没一会就2021年了!希望来年有长足的长进啊！ 今天利用上班时间，看了下jdk代理和cglib代理的区别。 简单来说，就是目标对象只有实现了接口才能用jdk代理，否则只能用cglib代理。 …  明日计划：继续打一会核心卷一的代码">
   
     <link rel="alternate" href="/atom.xml" title="李二狗" type="application/atom+xml">
   
@@ -65,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2019第2次回顾" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2021100jdk代理和cglib代理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/04/07/2019第2次回顾/" class="article-date">
-  <time datetime="2019-04-07T13:42:23.000Z" itemprop="datePublished">2019-04-07</time>
+    <a href="/2020/12/31/2021100jdk代理和cglib代理/" class="article-date">
+  <time datetime="2020-12-31T14:49:40.000Z" itemprop="datePublished">2020-12-31</time>
 </a>
     
   </div>
@@ -79,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      2019第2次回顾
+      2021100jdk代理和cglib代理
     </h1>
   
 
@@ -87,38 +87,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天4月7号，清明三天假刹割。其中两天在家里蹲。</p>
-<p>还以为都是今天就要写回顾了呢，结果一看是9号，不过既然看到了，就搞一搞。</p>
-<p>02版的：</p>
-<p>2323计划凉了。</p>
-<p>GTD突破计划凉了。</p>
-<p>喜欢自己计划基本凉了。</p>
-<p>好在，知道自己想干什么，近期积极性还算比较高，开始早起看书了。</p>
-<p>希望这个习惯能保持，争取4月把第一本书看完。</p>
-<p>那么这次计划是这样的：</p>
-<p>早睡什么的去死吧，起床困难了自然就知道早睡了？哈哈哈。</p>
-<p>然后来说下GTD，不可执行的不是GTD这点可能我还没搞懂，然后就是记录GTD的地方过于分散导致目标多了，反而变瞎子。</p>
-<p>再说下充电，初版的<code>书影音</code>死于太过于泛化，02版本那个<code>喜欢自己</code>更糟糕，不仅泛化，而且还浮于表面~</p>
-<p>所以充电呢，就是得实事求是，要搞干货。</p>
-<p>正好最近发现我这个嘴巴是正的笨得够，可以在这方面充下电。</p>
-<h4 id="03-FIX"><a href="#03-FIX" class="headerlink" title="03 FIX"></a><em>03 FIX</em></h4><ul>
-<li>早睡 早起</li>
-<li>回顾 最初计划</li>
-<li>存款 最初计划</li>
-<li>音乐 陈老师的票买到了，但是不想去了？</li>
-<li>项目 暂停，原因是目标过多</li>
-<li>GTD (留意)保留一份单线程GTD</li>
-<li>充电 (留意)睡前学说话</li>
-</ul>
-<p>这样应该可以了8？</p>
+        <blockquote>
+<p>003<br>昨日计划：试着用代理解决日志问题</p>
+</blockquote>
+<p>没一会就2021年了!希望来年有长足的长进啊！</p>
+<p>今天利用上班时间，看了下jdk代理和cglib代理的区别。</p>
+<p>简单来说，就是目标对象只有实现了接口才能用jdk代理，否则只能用cglib代理。</p>
+<p>…</p>
+<blockquote>
+<p>明日计划：继续打一会核心卷一的代码</p>
+</blockquote>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2019/04/07/2019第2次回顾/" data-id="ckjd0essp000na7x6c8z7px0s" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2020/12/31/2021100jdk代理和cglib代理/" data-id="ckjd0esst000za7x6vbsv2ee7" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/回顾/">回顾</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/是男人就干100天/">是男人就干100天</a></li></ul>
 
     </footer>
   </div>
@@ -126,19 +112,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/05/19/关于间歇性沮丧/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          关于间歇性沮丧
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/03/12/what/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/12/30/2021100今天玩代理/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">what?</div>
+      <div class="article-nav-title">2021100今天玩代理</div>
     </a>
   
 </nav>
