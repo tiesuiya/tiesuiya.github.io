@@ -62,6 +62,143 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-测试驱动开发学习笔记（UTDD）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/01/测试驱动开发学习笔记（UTDD）/" class="article-date">
+  <time datetime="2020-08-01T15:59:17.000Z" itemprop="datePublished">2020-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/01/测试驱动开发学习笔记（UTDD）/">测试驱动开发学习笔记（UTDD）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><p>TDD(Test-Driven Development)是敏捷开发中的一项核心实践和技术、是一种方法论。思路是通过测试来推进整个开发的进行。表现为测试代码优先于业务代码。UTDD呢，其实U就是unit，一般习惯直接叫成TDD。</p>
+<p>从长远角度来看，他加快了组织价值流输出的质量、速度、稳定性，所以我想他理应纳入DevOps技能范凑。</p>
+<h1 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h1><p>为什么要用到他呢？为什么说他加快了组织价值流输出呢？这就要说说他的优点了：</p>
+<ol>
+<li>自解性：测试代码即文档，新接触代码的开发人员通过阅读测试代码即可充分了解业务。</li>
+<li>健壮性：业务建立在一个个单元测试的保护之下，规避了大批bug。</li>
+<li>正确性：修改已有代码不再烫手，测试带来了正确性保护，这将在重构或者维护时体现。</li>
+<li>改进API：测试自然的让开发人员变得从客户端角度编写可测试的OO代码，驱动了API的设计。</li>
+</ol>
+<p>以上的优点都在一定程度上提升组织的单位价值输出。</p>
+<p>另外，他的引入也是有代价和风险的：</p>
+<ol>
+<li>开发成本：开发人员需要编写测试代码。</li>
+<li>维护成本：开发人员需要维护测试代码。</li>
+<li>环境搭建：测试环境的建立成本。</li>
+</ol>
+<p>所以，对于组织来说它的引入则是一把双刃剑，要看用在什么场景以及用到什么程度。成本大于收益那就不要采用了。</p>
+<h1 id="How"><a href="#How" class="headerlink" title="How"></a>How</h1><h2 id="一、学TDD前该知道的"><a href="#一、学TDD前该知道的" class="headerlink" title="一、学TDD前该知道的"></a>一、学TDD前该知道的</h2><ul>
+<li><p>单元测试</p>
+<p>单元测试应该是面向业务的，而不是面向代码的，编写单元测试时应该将一个<strong>业务场景</strong>当做一个被测试的单元。单元测试应遵循<strong>FIRST</strong>原则，即快（不依赖外部）、可重复、隔离（独立性）、清晰的成功或失败、频繁且小规模。测试方法命名采用<strong>ruby命名法</strong>should_xxx_xxx()，内容应用<strong>Given-When-Then</strong>模式，When时注意运用CQS命令查询分离原则。框架上，主要有做测试的Junit，做验证的AssertJ，做模拟的Mockito。</p>
+</li>
+<li><p>面向对象</p>
+<p>业务代码编写遵守<strong>SOLID</strong>六大原则，单一职责原则、开闭原则…..等。简单来说要记住<strong>迪米特法则</strong>，即不要和陌生人说话，以及<strong>信息专家模式</strong>，以减少外部的数据访问权，然后就是注意<strong>组合优先</strong>，无差异无继承。</p>
+</li>
+<li><p>重构</p>
+<p>重构即在保证原有代码功能的前提下，去除代码坏味道，进行的一种代码的优化操作。<strong>Kent Beck简单设计</strong>原则能很好的指导重构：</p>
+<pre><code>1. 通过所有测试
+2. 减少重复代码
+3. 表达程序员的意图
+4. 尽可能减少方法的数量
+</code></pre><p>重构的运用需要注意重构策略的选择和考虑引入Code Review。另外，重构可以且需要随时进行。</p>
+</li>
+</ul>
+<h2 id="二、TDD"><a href="#二、TDD" class="headerlink" title="二、TDD"></a>二、TDD</h2><p>TDD核心可看做一个闭环：<strong>RED -&gt; GREEN -&gt; REFACTOR</strong>，即运行一个失败的测试 -&gt; 让测试通过 -&gt; 及时重构代码。</p>
+<p><img src="https://tuchuang777.oss-cn-beijing.aliyuncs.com/image-20200802144240997.png?x-oss-process=image/resize,h_400" alt="image-20200802144240997"></p>
+<p>TDD还包括以下知识：</p>
+<ol>
+<li><p>需求分析</p>
+<p>TDD遵循简单设计，而这个简单设计不是不设计或少设计，而是清晰的设计。在进行单元测试编写之前，开发人员要用足够的时间去弄清<strong>需求</strong>，然后再做<strong>任务分解</strong>和<strong>子任务分解</strong>。任务分解是对用户故事的拆解，子任务分解是对任务的进一步细分拆解，最终任务和子任务能达到：</p>
+<ol>
+<li>任何子任务均可通过测试来验收</li>
+<li>所有任务的集合恰好等价于原问题域</li>
+<li>子任务之间无交集</li>
+</ol>
+<p>任务之间保持递进原则。</p>
+</li>
+<li><p>TDD的三大支柱</p>
+<ol>
+<li>一次只写一个刚好失败的测试</li>
+<li>不写任何产品代码，除非他刚好能让失败的测试通过</li>
+<li>只在测试全部通过的前提下重构或开始新的功能</li>
+</ol>
+</li>
+<li><p>编写测试上，涵盖<strong>单元测试</strong>需要注重的点，比如FIRST原则等。</p>
+</li>
+</ol>
+<h1 id="Last"><a href="#Last" class="headerlink" title="Last"></a>Last</h1><p>最后，感谢测试驱动开发训练营张逸老师的倾囊相授！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://tiesuiya.github.io/2020/08/01/测试驱动开发学习笔记（UTDD）/" data-id="ckl5awnxv003yqsx63uuk9axt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/2020/">2020</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DevOps/">DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TDD/">TDD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习一门技能/">学习一门技能</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-未来趋势" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/09/未来趋势/" class="article-date">
+  <time datetime="2020-02-09T15:59:49.000Z" itemprop="datePublished">2020-02-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/09/未来趋势/">未来趋势</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>区块链</li>
+<li>DevOps</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://tiesuiya.github.io/2020/02/09/未来趋势/" data-id="ckl5awnxs003sqsx67pp31wbk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/未来/">未来</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-读书笔记-DevOps实践指南" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/02/07/读书笔记-DevOps实践指南/" class="article-date">
@@ -556,7 +693,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2020/02/07/读书笔记-DevOps实践指南/" data-id="ckl2gnybq004l5dx6iqm229jr" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2020/02/07/读书笔记-DevOps实践指南/" data-id="ckl5awnyb004qqsx6p81upnom" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DevOps/">DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
@@ -610,7 +747,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2020/02/06/做大梦/" data-id="ckl2gnyaz003g5dx6jf26jiv7" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2020/02/06/做大梦/" data-id="ckl5awnxo003hqsx6eq0dea0m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/梦想/">梦想</a></li></ul>
@@ -682,7 +819,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2020/02/03/读书笔记-人性的弱点人性的优点/" data-id="ckl2gnyb5003v5dx66euknrq9" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2020/02/03/读书笔记-人性的弱点人性的优点/" data-id="ckl5awnxu003wqsx6jv6twob4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/卡耐基/">卡耐基</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
@@ -747,7 +884,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2020/01/28/2020年月总结/" data-id="ckl2gny9r000v5dx601da0j01" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2020/01/28/2020年月总结/" data-id="ckl5awnwi000zqsx6dbhgjc0m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/回顾/">回顾</a></li></ul>
@@ -843,7 +980,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2020/01/10/读书笔记-财富自由之路/" data-id="ckl2gnyb800405dx6wcu0bksq" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2020/01/10/读书笔记-财富自由之路/" data-id="ckl5awnxz0043qsx6rnm6ewhs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/李笑来/">李笑来</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
@@ -896,7 +1033,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2020/01/07/2020年计划/" data-id="ckl2gny9t000z5dx650r6yu5z" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2020/01/07/2020年计划/" data-id="ckl5awnwg000uqsx6resh8tf2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计划/">计划</a></li></ul>
@@ -962,7 +1099,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2020/01/05/2019年总结/" data-id="ckl2gny9m000i5dx62x1el2c7" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2020/01/05/2019年总结/" data-id="ckl5awnwd000mqsx6p4kt660m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
@@ -1032,98 +1169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2019/12/24/文明/" data-id="ckl2gnyb3003n5dx6kuwguvke" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/观点/">观点</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-浅谈我国近代的发展" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/23/浅谈我国近代的发展/" class="article-date">
-  <time datetime="2019-12-23T05:26:03.000Z" itemprop="datePublished">2019-12-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/23/浅谈我国近代的发展/">浅谈我国近代的发展</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>视频网站上有很多数据可视化的视频，几乎所有数据，只要一到2000年左右，中国那叫一个夸张，数据蹭蹭蹭直往上窜啊。</p>
-<p>是的，中国这些年发展得好，打破西方经济科学规律、和认知的那种好。</p>
-<p>我所理解的，我们能有这样的发展，有一下几点主观原因：</p>
-<ol>
-<li>人口红利</li>
-<li>尽早从苏联接触到工业技能</li>
-<li>重视教育</li>
-<li>具备核打击能力，且国际环境稳定</li>
-<li>儒家文化圈，人民勤劳且本份</li>
-<li>一个能和西方撇清关系的政府</li>
-<li>一批下过乡的官员，心怀抱负</li>
-<li>后发优势</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2019/12/23/浅谈我国近代的发展/" data-id="ckl2gnyb4003s5dx6kt6ehowp" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/观点/">观点</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-影响力" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/17/影响力/" class="article-date">
-  <time datetime="2019-12-17T03:43:15.000Z" itemprop="datePublished">2019-12-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/17/影响力/">影响力</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>（排名不分先后，手动滑稽）</p>
-<p>罗永浩、高晓松、李志、郝培强、李笑来、老师好我叫何同学、观视频工作室、韩寒</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2019/12/17/影响力/" data-id="ckl2gnyb1003i5dx6srxmshrb" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2019/12/24/文明/" data-id="ckl5awnxp003lqsx69mdtlzvv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/观点/">观点</a></li></ul>
@@ -1185,6 +1231,14 @@
       <ul>
         
           <li>
+            <a href="/2021/02/14/2021100爬山/">2021100爬山</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/14/2021100没时间/">2021100没时间</a>
+          </li>
+        
+          <li>
             <a href="/2021/02/12/2021100我想我是有时间的-1/">2021100我想我是有时间的</a>
           </li>
         
@@ -1194,14 +1248,6 @@
         
           <li>
             <a href="/2021/02/11/2021100回家/">2021100回家</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/10/2021100clubhouse2/">2021100clubhouse2</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/08/2021100clubhouse/">2021100clubhouse</a>
           </li>
         
       </ul>
