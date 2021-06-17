@@ -131,20 +131,49 @@
 <li>IoC容器运行的全过程，以及子过程？BeanDefinition资源的定位-&gt;BeanDefinition的读取（载入和解析）-&gt;BeanDefinition在IoC容器中注册-&gt;IoC容器的依赖注入</li>
 <li>BeanDefinition是什么，作用是什么？BeanDefinition就是用于定义容器中Bean信息的一个类吧，比如配置Bea的名称、类路径、init-lazy、类型（singleton、prototype）</li>
 <li>FactoryBean是什么，作用是什么？FactoryBean是一个能产生或修饰对象生成的工厂Bean</li>
-<li>FactoryBean和BeanFactory的区别是什么？一个是Bean；一个是Factory</li>
+<li>FactoryBean和BeanFactory的区别是什么？BeanFactory:负责生产和管理Bean的一个工厂接口，提供一个Spring Ioc容器规范；FactoryBean: 一种Bean创建的一种方式，对Bean的一种扩展。对于复杂的Bean对象初始化创建使用其可封装对象的创建细节。</li>
 <li>加载的资源如何定位？由不同的实现定位不同资源，主要方法是getResourceByPath</li>
 </ul>
 <h1 id="day-6"><a href="#day-6" class="headerlink" title="day 6"></a>day 6</h1><p>问题还没答完，想要去理解就得看东西。</p>
 <p>看书呢，东西太多，看网上呢，资料少而且坑。</p>
 <p>还是自己摸索下靠谱。所以今天就又看了下IoC注入的整个流程：</p>
-<p><img src="https://tuchuang777.oss-cn-beijing.aliyuncs.com/%E6%88%AA%E5%B1%8F2021-06-11%20%E4%B8%8A%E5%8D%881.36.59.png" alt="截屏2021-06-11 上午1.36.59"></p>
+<p><img src="https://tuchuang777.oss-cn-beijing.aliyuncs.com/%E6%88%AA%E5%B1%8F2021-06-15%20%E4%B8%8B%E5%8D%8811.40.32.png" alt="截屏2021-06-15 下午11.40.32"></p>
 <p>细节一大堆还没看哦，这里就列了下主流程，但是也算一点眉目。</p>
 <p>感觉更需要、和必要投入的事还有很多，一点点来吧。</p>
+<h1 id="day-7"><a href="#day-7" class="headerlink" title="day 7"></a>day 7</h1><p>先来两张图：</p>
+<p><img src="https://tuchuang777.oss-cn-beijing.aliyuncs.com/%E6%88%AA%E5%B1%8F2021-06-12%20%E4%B8%8A%E5%8D%8812.23.37.png" alt="FileSystemXmlApplicationContext"></p>
+<p><img src="https://tuchuang777.oss-cn-beijing.aliyuncs.com/%E6%88%AA%E5%B1%8F2021-06-12%20%E4%B8%8A%E5%8D%8812.21.59.png" alt="DefaultListableBeanFactory"></p>
+<p>再来一个宝藏，刚看了一集，发现和我这个13天计划非常契合，针不戳：</p>
+<p><a href="https://www.bilibili.com/video/BV1dK4y127mH?from=search&amp;seid=17125273885717716928" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1dK4y127mH?from=search&amp;seid=17125273885717716928</a></p>
+<h1 id="day-8"><a href="#day-8" class="headerlink" title="day 8"></a>day 8</h1><p>鸽了</p>
+<h1 id="day-9"><a href="#day-9" class="headerlink" title="day 9"></a>day 9</h1><p>鸽了 </p>
+<h1 id="day-10"><a href="#day-10" class="headerlink" title="day 10"></a>day 10</h1><p>鸽了 </p>
+<h1 id="day-11"><a href="#day-11" class="headerlink" title="day 11"></a>day 11</h1><ul>
+<li>容器Bean如何载入？以AbstractApplicationContext的refresh方法作为入口，配合其子类完成资源的定位、刷新、加载BeanDefinition为文档</li>
+<li>容器Bean如何解析？通过BeanDefinitionParserDelegate+DefaultBeanDefinitionDocumentReader去解析BeanDefinition</li>
+<li>容器Bean如何注册？通过BeanDefinitionReaderUtils工具将BeanDefinition注册到DefaultListableBeanFactory容器中</li>
+</ul>
+<h1 id="day-12"><a href="#day-12" class="headerlink" title="day 12"></a>day 12</h1><p>鸽</p>
+<h1 id="day-12-1"><a href="#day-12-1" class="headerlink" title="day 12"></a>day 12</h1><p>搭建项目shibaframework柴柴框架用于研究springframework<br><img src="https://tuchuang777.oss-cn-beijing.aliyuncs.com/%E6%88%AA%E5%B1%8F2021-06-18%20%E4%B8%8A%E5%8D%881.26.15.png" alt="柴柴logo"></p>
+<p>开始看</p>
+<ul>
+<li>手写Spring启动及扫描流程</li>
+<li>手写getBean()流程</li>
+<li>手写Bean生命周期流程</li>
+</ul>
+<ul>
+<li>依赖注入的过程？</li>
+<li>常用的@Autowried注解是如何工作的？</li>
+<li>容器自身的生命周期是什么？</li>
+<li>BeanPostProcessor是什么，作用是什么？</li>
+<li>Bean的依赖检查是什么，作用是什么？</li>
+<li>Bean对IoC容器的感知是什么，作用是什么？</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/06/06/202113心得/" data-id="ckpr6jf8j005gg1x62ik3h9gr" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2021/06/06/202113心得/" data-id="ckpsju0u7004ex1x6pb3jjshm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -230,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/05/27/202110心得/" data-id="ckpr6jf7w0047g1x6f3ha4fkv" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2021/05/27/202110心得/" data-id="ckpsju0u5004cx1x6fexof2fc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -302,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/04/23/2021100鸽21-36/" data-id="ckpr6jf7r003zg1x6ik353j59" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2021/04/23/2021100鸽21-36/" data-id="ckpsju0tv0044x1x65tthphls" class="article-share-link">Share</a>
       
       
     </footer>
@@ -348,50 +377,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100只言片语/" data-id="ckpr6jf6h0025g1x6ag714v04" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2021100鸽16" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/03/22/2021100鸽16/" class="article-date">
-  <time datetime="2021-03-22T15:14:24.000Z" itemprop="datePublished">2021-03-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/22/2021100鸽16/">2021100鸽16</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>022<br>昨日计划：忆目标</p>
-</blockquote>
-<p>鸽</p>
-<blockquote>
-<p>明日计划：?</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽16/" data-id="ckpr6jf7o003sg1x6hjpcz7kc" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100只言片语/" data-id="ckpsju0sf001wx1x62qzxf0f5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -434,7 +420,50 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽17/" data-id="ckpr6jf7o003tg1x6outs6w9y" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽17/" data-id="ckpsju0tp003xx1x6gb754ex4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2021100鸽16" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/03/22/2021100鸽16/" class="article-date">
+  <time datetime="2021-03-22T15:14:24.000Z" itemprop="datePublished">2021-03-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/22/2021100鸽16/">2021100鸽16</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>022<br>昨日计划：忆目标</p>
+</blockquote>
+<p>鸽</p>
+<blockquote>
+<p>明日计划：?</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽16/" data-id="ckpsju0tp003yx1x6nzka194z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -477,7 +506,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽18/" data-id="ckpr6jf7p003vg1x64skcbjoi" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽18/" data-id="ckpsju0tr003zx1x6erg4vaul" class="article-share-link">Share</a>
       
       
     </footer>
@@ -520,7 +549,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽19/" data-id="ckpr6jf7q003wg1x6hjkubckb" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽19/" data-id="ckpsju0ts0040x1x67ki7rp7d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -563,7 +592,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽20/" data-id="ckpr6jf7q003xg1x6pete5ryw" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽20/" data-id="ckpsju0ts0041x1x6b1ofx58w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -607,7 +636,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/03/16/2021100忆初心/" data-id="ckpr6jf6v002kg1x6m4b4rqeg" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2021/03/16/2021100忆初心/" data-id="ckpsju0sw002tx1x6zpqqdc1m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -683,7 +712,7 @@
           </li>
         
           <li>
-            <a href="/2021/03/22/2021100鸽16/">2021100鸽16</a>
+            <a href="/2021/03/22/2021100鸽17/">2021100鸽16</a>
           </li>
         
       </ul>
