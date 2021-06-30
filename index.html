@@ -62,6 +62,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2021心得4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/07/01/2021心得4/" class="article-date">
+  <time datetime="2021-06-30T16:08:42.000Z" itemprop="datePublished">2021-07-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/01/2021心得4/">2021心得4</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前面经历了三次计划</p>
+<ul>
+<li>2021100：战线太长，鸽了38%</li>
+<li>202110：小有所获，不系统</li>
+<li>202113：初见端倪，有所成效</li>
+</ul>
+<p>这一次计划，有会有什么收获呢？</p>
+<p>今天也2021年7月1号了，2021年过了一半了，正是新生好时候！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://tiesuiya.github.io/2021/07/01/2021心得4/" data-id="ckqjooqwr004b1mx6uxhordnl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-202113心得" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/06/06/202113心得/" class="article-date">
@@ -172,25 +216,46 @@
 <h1 id="day-20"><a href="#day-20" class="headerlink" title="day 20"></a>day 20</h1><ul>
 <li>实现最基本的自动注入</li>
 </ul>
-<p>开始看</p>
-<ul>
-<li>手写Spring启动及扫描流程</li>
-<li>手写getBean()流程</li>
-<li>手写Bean生命周期流程</li>
+<h1 id="day-21"><a href="#day-21" class="headerlink" title="day 21"></a>day 21</h1><p>鸽</p>
+<h1 id="day-22"><a href="#day-22" class="headerlink" title="day 22"></a>day 22</h1><ul>
+<li>实现BeanNameAware</li>
 </ul>
-<ul>
-<li>依赖注入的过程？</li>
-<li>常用的@Autowried注解是如何工作的？</li>
-<li>容器自身的生命周期是什么？</li>
-<li>BeanPostProcessor是什么，作用是什么？</li>
-<li>Bean的依赖检查是什么，作用是什么？</li>
-<li>Bean对IoC容器的感知是什么，作用是什么？</li>
+<h1 id="day-23"><a href="#day-23" class="headerlink" title="day 23"></a>day 23</h1><p>鸽</p>
+<h1 id="day-24"><a href="#day-24" class="headerlink" title="day 24"></a>day 24</h1><ul>
+<li>实现BeanPostProcessor（开始单一测试模式） </li>
 </ul>
+<h1 id="day-25"><a href="#day-25" class="headerlink" title="day 25"></a>day 25</h1><ul>
+<li>实现最基本的AOP</li>
+</ul>
+<p>回答一下day2的问题</p>
+<ol>
+<li>IoC容器和依赖反转模式的关系？IoC容器就是一个依赖反转模式的一个具体框架实现。</li>
+<li>IoC的应用场景是什么？IoC(Inversion of Control)控制反转，是面向对象编程中一种设计原则（或设计模式），旨在降低代码之间的耦合度。在Spring中，IoC设计原则具体被现为了一种容器框架，框架本身实现了DI(Dependency Injection)，依赖注入对象的能力。在程序运行时表现为，被依赖的对象在被创建时，是由一个第三方框架即IoC容器框架提供给它，而不是通过new的方式自己去创建。故可以说，依赖对象的获得被反转了，IoC容器框架便通过这种控制反转的方式，降低了代码耦合度。IoC和DI的关系是，IoC是抽象的定义，DI是具体的实现，一个宽泛，一个具体。DIP(Dependency inversion principle)依赖反转原则，则是更为抽象的存在！他妈的，搁这里比谁更抽象呢？</li>
+<li>BeanFactory是什么，作用是什么？BeanFactory定义了IoC容器的最基本形式</li>
+<li>ApplicationContext是什么，作用是什么？：ApplicationContext是IoC容器的高级表现形式</li>
+<li>IoC容器运行的全过程，以及子过程？BeanDefinition资源的定位-&gt;BeanDefinition的读取（载入和解析）-&gt;BeanDefinition在IoC容器中注册-&gt;IoC容器的依赖注入</li>
+<li>BeanDefinition是什么，作用是什么？BeanDefinition就是用于定义容器中Bean信息的一个类吧，比如配置Bea的名称、类路径、init-lazy、类型（singleton、prototype）</li>
+<li>FactoryBean是什么，作用是什么？FactoryBean是一个能产生或修饰对象生成的工厂Bean</li>
+<li>FactoryBean和BeanFactory的区别是什么？BeanFactory:负责生产和管理Bean的一个工厂接口，提供一个Spring Ioc容器规范；FactoryBean: 一种Bean创建的一种方式，对Bean的一种扩展。对于复杂的Bean对象初始化创建使用其可封装对象的创建细节。</li>
+<li>加载的资源如何定位？由不同的实现定位不同资源，主要方法是getResourceByPath</li>
+<li>容器Bean如何载入？以AbstractApplicationContext的refresh方法作为入口，配合其子类完成资源的定位、刷新、加载BeanDefinition为文档</li>
+<li>容器Bean如何解析？通过BeanDefinitionParserDelegate+DefaultBeanDefinitionDocumentReader去解析BeanDefinition</li>
+<li>容器Bean如何注册？通过BeanDefinitionReaderUtils工具将BeanDefinition注册到DefaultListableBeanFactory容器中</li>
+<li>依赖注入的过程？使用反射识别和设置从容器中获得的对象</li>
+<li>常用的@Autowried注解是如何工作的？雷同13</li>
+<li>容器自身的生命周期是什么？[TODO]</li>
+<li>BeanPostProcessor是什么，作用是什么？实现深度自定义初始化Bean，可自定义创建前和创建后的动作</li>
+<li>Bean的依赖检查是什么，作用是什么？[TODO]</li>
+<li>Bean对IoC容器的感知是什么，作用是什么？[TODO]</li>
+</ol>
+<p>其他问题：<br>19：IoC、DI、DIP三者的关系?：IoC(Inversion of Control)控制反转，是面向对象编程中一种设计原则（或设计模式），旨在降低代码之间的耦合度。在Spring中，IoC设计原则具体被现为了一种容器框架，框架本身实现了DI(Dependency Injection)，依赖注入对象的能力。在程序运行时表现为，被依赖的对象在被创建时，是由一个第三方框架即IoC容器框架提供给它，而不是通过new的方式自己去创建。故可以说，依赖对象的获得被反转了，IoC容器框架便通过这种控制反转的方式，降低了代码耦合度。IoC和DI的关系是，IoC是抽象的定义，DI是具体的实现，一个宽泛，一个具体。DIP(Dependency inversion principle)依赖反转原则，则是更为抽象的存在！他妈的，搁这里比谁更抽象呢？</p>
+<p>来看看计划：</p>
+<p>实现一个自己的IoC容器？框架基本实现，计划13天实际用了25天，牛逼！</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/06/06/202113心得/" data-id="ckqb2k361004btgx64uqpkjcw" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2021/06/06/202113心得/" data-id="ckqjooqxh005p1mx687j1e37s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -276,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/05/27/202110心得/" data-id="ckqb2k362004ctgx60pieuavt" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2021/05/27/202110心得/" data-id="ckqjooqx0004x1mx6blwvzveg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -348,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/04/23/2021100鸽21-36/" data-id="ckqb2k35w0043tgx6ulm8ee8m" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2021/04/23/2021100鸽21-36/" data-id="ckqjooqwr004a1mx68fzjsnol" class="article-share-link">Share</a>
       
       
     </footer>
@@ -394,50 +459,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100只言片语/" data-id="ckqb2k34m001vtgx66z71b9us" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2021100鸽16" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/03/22/2021100鸽16/" class="article-date">
-  <time datetime="2021-03-22T15:14:24.000Z" itemprop="datePublished">2021-03-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/22/2021100鸽16/">2021100鸽16</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>022<br>昨日计划：忆目标</p>
-</blockquote>
-<p>鸽</p>
-<blockquote>
-<p>明日计划：?</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽16/" data-id="ckqb2k35r003xtgx638cbm5lu" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100只言片语/" data-id="ckqjooquw001w1mx6vjag6232" class="article-share-link">Share</a>
       
       
     </footer>
@@ -480,7 +502,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽17/" data-id="ckqb2k35t003ytgx6mi4ab6a2" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽17/" data-id="ckqjooqwj003x1mx6z8e3lwx3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -490,9 +512,9 @@
 
 
   
-    <article id="post-2021100鸽19" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2021100鸽16" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2021/03/22/2021100鸽19/" class="article-date">
+    <a href="/2021/03/22/2021100鸽16/" class="article-date">
   <time datetime="2021-03-22T15:14:24.000Z" itemprop="datePublished">2021-03-22</time>
 </a>
     
@@ -504,7 +526,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/22/2021100鸽19/">2021100鸽16</a>
+      <a class="article-title" href="/2021/03/22/2021100鸽16/">2021100鸽16</a>
     </h1>
   
 
@@ -513,7 +535,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>019<br>昨日计划：?</p>
+<p>022<br>昨日计划：忆目标</p>
 </blockquote>
 <p>鸽</p>
 <blockquote>
@@ -523,7 +545,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽19/" data-id="ckqb2k35t003ztgx60jovw7fb" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽16/" data-id="ckqjooqwj003y1mx6hd3tgz1t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -566,7 +588,50 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽18/" data-id="ckqb2k35u0040tgx6lmory62q" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽18/" data-id="ckqjooqwk003z1mx6arln66cv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2021100鸽19" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/03/22/2021100鸽19/" class="article-date">
+  <time datetime="2021-03-22T15:14:24.000Z" itemprop="datePublished">2021-03-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/22/2021100鸽19/">2021100鸽16</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>019<br>昨日计划：?</p>
+</blockquote>
+<p>鸽</p>
+<blockquote>
+<p>明日计划：?</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽19/" data-id="ckqjooqwl00401mx6284wqstn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -609,51 +674,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽20/" data-id="ckqb2k35u0041tgx6gxq1qe84" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2021100忆初心" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/03/16/2021100忆初心/" class="article-date">
-  <time datetime="2021-03-16T14:41:52.000Z" itemprop="datePublished">2021-03-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/16/2021100忆初心/">2021100忆初心</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>023<br>昨日计划：忆初心</p>
-</blockquote>
-<p>“掌握一门技能，是你通往任何道路的起点，也是你到达终点的根本” – 李笑来</p>
-<p>“没有工具很多想法就是空想” – 知乎一层主</p>
-<blockquote>
-<p>明日计划：忆目标</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://tiesuiya.github.io/2021/03/16/2021100忆初心/" data-id="ckqb2k350002ptgx60pl9ix55" class="article-share-link">Share</a>
+      <a data-url="http://tiesuiya.github.io/2021/03/22/2021100鸽20/" data-id="ckqjooqwl00411mx6x5rz4irr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -700,7 +721,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
     </div>
   </div>
 
@@ -711,6 +732,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/07/01/2021心得4/">2021心得4</a>
+          </li>
         
           <li>
             <a href="/2021/06/06/202113心得/">202113心得</a>
@@ -726,10 +751,6 @@
         
           <li>
             <a href="/2021/03/22/2021100只言片语/">2021100只言片语</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/22/2021100鸽16/">2021100鸽16</a>
           </li>
         
       </ul>
